@@ -6,12 +6,12 @@ const watch = require('node-watch')
 
 let jsPath = {
 	get: './js/main.js',
-	put: './public/js/bundle.js'
+	put: './docs/js/bundle.js'
 }
 
 let cssPath = {
 	get: './sass/style.sass',
-	put: './public/css/style.css'
+	put: './docs/css/style.css'
 }
 
 const jsfy = () => {

@@ -14,4 +14,4 @@ npm install --only=dev
 node build
 ```
 
-The assets for the site are built at `/public/`
+The assets for the site are built at `/docs/`
