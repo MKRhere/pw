@@ -1,0 +1,7 @@
+{
+	"editor.renderControlCharacters": true,
+	"editor.renderWhitespace": "boundary",
+	"editor.insertSpaces": false,
+	"editor.tabSize": 4,
+	"files.eol": "\n"
+}
