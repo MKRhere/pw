@@ -33,5 +33,6 @@
 		"node-watch": "^0.5.5"
 	},
 	"dependencies": {
+		"babel-polyfill": "^6.26.0"
 	}
 }

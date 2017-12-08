@@ -34,6 +34,7 @@ const cssfy = () => {
 }
 
 function start() {
+	console.log('Running build...')
 	try {
 		jsfy()
 		cssfy()
@@ -50,3 +51,5 @@ watch(['js', 'sass'],
 	},
 	start
 )
+
+console.log('Exiting.')
