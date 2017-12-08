@@ -1,0 +1,37 @@
+{
+	"name": "mkr.pw",
+	"version": "0.1.0",
+	"description": "MKR's personal website",
+	"main": "index.js",
+	"scripts": {
+		"dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --colors",
+		"build": "node ./node_modules/webpack/bin/webpack.js -p",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/MKRhere/mkr.git"
+	},
+	"keywords": [
+		"personal",
+		"website",
+		"portfolio"
+	],
+	"author": "Muthu Kumar",
+	"license": "CC-BY-NC-ND-4.0",
+	"bugs": {
+		"url": "https://github.com/MKRhere/mkr/issues"
+	},
+	"homepage": "https://github.com/MKRhere/mkr#readme",
+	"devDependencies": {
+		"@babel/core": "^7.0.0-beta.34",
+		"@babel/preset-env": "^7.0.0-beta.34",
+		"babel-cli": "^6.26.0",
+		"babelify": "^8.0.0",
+		"browserify": "^14.5.0",
+		"node-sass": "^4.7.2",
+		"node-watch": "^0.5.5"
+	},
+	"dependencies": {
+	}
+}
