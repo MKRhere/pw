@@ -11,6 +11,10 @@ function toggle(obj) {
 			? 'none' : 'inline-block'
 }
 
+function toggleOn(obj) {
+	__(obj).style.display = 'inline-block'
+}
+
 function toggleOff(obj) {
 	__(obj).style.display = 'none'
 }
@@ -19,19 +23,31 @@ const addListener = (element, events, handler) =>
 	(Array.isArray(events)
 		? events
 		: [events]).forEach(event =>
-		element.addEventListener(event, handler))
+			element.addEventListener(event, handler))
 
 const addToolTip = selector => {
+	let tipselector = '#' + selector + '-select'
+	let tipcontent = '#' + selector + '-tip'
+
 	addListener(
-		__('#' + selector + '-click'),
-		['click', 'mouseover', 'mouseout'],
-		() => toggle('#' + selector + '-tip'))
+		__(tipselector),
+		['mouseover', 'mouseout'],
+		() => toggle(tipcontent))
+
+	addListener(
+		__(tipselector),
+		'touchstart',
+		() => addListener(
+			__(tipselector),
+			'touchend',
+			toggle(tipcontent)))
 
 	addListener(
 		__('body'),
-		'click',
-		(e) => { if (e.target !== __('#' + selector + '-tip')) toggleOff('#' + selector + '-tip') }
-	)}
+		'touchstart',
+		(e) => { if (e.target !== __(tipcontent)) toggleOff(tipcontent) }
+	)
+}
 
 //export default addToolTip
 module.exports = addToolTip
