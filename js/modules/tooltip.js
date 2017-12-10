@@ -45,9 +45,14 @@ const addToolTip = selector => {
 	addListener(
 		__('body'),
 		'touchstart',
-		(e) => { if (e.target !== __(tipcontent)) toggleOff(tipcontent) }
+		(e) => { if (e.target !== __(tipcontent)) {
+			addListener(
+				__('body'),
+				'touchend',
+				(e) => { if (e.target !== __(tipcontent)) toggleOff(tipcontent) }
+			)
+		}}
 	)
 }
 
-//export default addToolTip
 module.exports = addToolTip

@@ -28,7 +28,7 @@ const cssfy = () => {
 		file: cssPath.get
 	}, function (err, result) {
 		fs.writeFile(cssPath.put, result.css, (e) => {
-			if (e) console.log(console.log('[ERR] : ' + e))
+			if (e) throw new Error('[ERR] : ' + e)
 		})
 	})
 }
@@ -39,7 +39,7 @@ function start() {
 		jsfy()
 		cssfy()
 	} catch (e) {
-		console.log('[ERR] : ' + e)
+		throw new Error('[ERR] : ' + e)
 	}
 }
 
