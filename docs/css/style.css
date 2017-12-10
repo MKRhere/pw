@@ -90,7 +90,6 @@ h1 {
 .row-full, .row-3 {
   display: block;
   display: grid;
-  align-content: center;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
@@ -99,14 +98,15 @@ h1 {
   grid-template-columns: [full] 100%; }
 
 .row-3 {
-  grid-template-rows: [header] 10% [gutter] 5% [content1] 25% [gutter] 5% [content2] 25%;
-  grid-template-columns: [col1] 1fr [col2] 1fr [col3] 1fr; }
+  height: 100vh;
+  grid-template-rows: [header] 10% [gutter] 5% [content1] 28% [content2] 28%;
+  grid-template-columns: [col1] 1fr [col2] 1fr [col3] 1fr;
+  align-content: center; }
 
 .col-full, .col-1-1, .col-1-2, .col-1-3, .col-2-1, .col-2-2, .col-2-3 {
   align-self: center;
   grid-column: full;
-  margin: auto;
-  padding: 1rem; }
+  margin: auto; }
 
 .row-head {
   align-self: center;
@@ -121,46 +121,58 @@ h1 {
 .col-1-1 {
   grid-row: content1;
   grid-column: col1;
-  margin: 0.5rem;
   min-height: 100%;
+  padding: 0.5rem;
   z-index: 99; }
 
 .col-1-2 {
   grid-row: content1;
   grid-column: col2;
-  margin: 0.5rem;
   min-height: 100%;
+  padding: 0.5rem;
   z-index: 99; }
 
 .col-1-3 {
   grid-row: content1;
   grid-column: col3;
-  margin: 0.5rem;
   min-height: 100%;
+  padding: 0.5rem;
   z-index: 99; }
 
 .col-2-1 {
   grid-row: content2;
   grid-column: col1;
-  margin: 0.5rem;
   min-height: 100%;
+  padding: 0.5rem;
   z-index: 98; }
 
 .col-2-2 {
   grid-row: content2;
   grid-column: col2;
-  margin: 0.5rem;
   min-height: 100%;
+  padding: 0.5rem;
   z-index: 98; }
 
 .col-2-3 {
   grid-row: content2;
   grid-column: col3;
-  margin: 0.5rem;
   min-height: 100%;
+  padding: 0.5rem;
   z-index: 98; }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
+  .row-full, .row-3 {
+    margin: 0;
+    display: flex;
+    flex-direction: column; }
+  .row-3 {
+    height: auto;
+    margin: 5rem auto;
+    max-width: 260px; }
+  .row-head {
+    margin: 2em auto; } }
+
+@media screen and (max-height: 700px) {
   .row-full, .row-3 {
     margin: 0;
     display: flex;
@@ -174,6 +186,7 @@ h1 {
 
 .p-item {
   position: relative;
+  height: 22vh;
   padding: 1.5rem 1.8rem;
   border-radius: .5rem;
   text-align: left;
@@ -196,6 +209,14 @@ h1 {
 .p-links a {
   display: inline-block;
   margin: 0.5rem 0.5rem; }
+
+@media screen and (max-width: 768px) {
+  .p-item {
+    height: auto; } }
+
+@media screen and (max-height: 700px) {
+  .p-item {
+    height: auto; } }
 
 .tags {
   padding: 0;

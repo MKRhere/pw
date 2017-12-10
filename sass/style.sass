@@ -105,7 +105,6 @@ h1
 .row-full
 	display: block
 	display: grid
-	align-content: center
 	align-items: center
 	justify-content: center
 	min-height: 100vh
@@ -115,14 +114,15 @@ h1
 
 .row-3
 	@extend .row-full
-	grid-template-rows: [header] 10% [gutter] 5% [content1] 25% [gutter] 5% [content2] 25%
+	height: 100vh
+	grid-template-rows: [header] 10% [gutter] 5% [content1] 28% [content2] 28%
 	grid-template-columns: [col1] 1fr [col2] 1fr [col3] 1fr
+	align-content: center
 
 .col-full
 	align-self: center
 	grid-column: full
 	margin: auto
-	padding: 1rem
 
 .row-head
 	align-self: center
@@ -140,11 +140,23 @@ h1
 			@extend .col-full
 			grid-row: content#{$rown}
 			grid-column: col#{$coln}
-			margin: 0.5rem
 			min-height: 100%
+			padding: 0.5rem
 			z-index: #{100 - $rown}
 
-@media screen and (max-width: 600px)
+@media screen and (max-width: 768px)
+	.row-full
+		margin: 0
+		display: flex
+		flex-direction: column
+	.row-3
+		height: auto
+		margin: 5rem auto
+		max-width: 260px
+	.row-head
+		margin: 2em auto
+
+@media screen and (max-height: 700px)
 	.row-full
 		margin: 0
 		display: flex
@@ -160,6 +172,7 @@ h1
 
 .p-item
 	position: relative
+	height: 22vh
 	padding: 1.5rem 1.8rem
 	border-radius: .5rem
 	text-align: left
@@ -182,6 +195,14 @@ h1
 .p-links a
 	display: inline-block
 	margin: 0.5rem 0.5rem
+
+@media screen and (max-width: 768px)
+	.p-item
+		height: auto
+
+@media screen and (max-height: 700px)
+	.p-item
+		height: auto
 
 // Tags
 
