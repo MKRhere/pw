@@ -1,6 +1,6 @@
 {
 	"name": "mkr.pw",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "MKR's personal website",
 	"main": "index.js",
 	"scripts": {

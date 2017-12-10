@@ -1,13 +1,17 @@
+@charset "UTF-8";
 html {
-  font-size: 14px;
+  font-size: 12px;
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-weight: 300;
-  color: #6633ff; }
+  color: #8b64ff; }
 
 body {
   width: 100%;
   overflow-x: hidden;
-  background: #000; }
+  background: rgba(0, 0, 0, 0.9);
+  background: linear-gradient(to bottom, #000000 0%, #000000 30%, #2f2730 100%);
+  max-width: 768px;
+  margin: auto; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
@@ -16,8 +20,21 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin: 0; }
 
+a {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: underline dashed; }
+
 h1 {
-  font-size: 2.8em; }
+  font-size: 2.8rem; }
+
+.t-med {
+  font-size: 1.5em; }
+
+.t-large {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  font-weight: 500; }
 
 .t-right {
   text-align: right; }
@@ -33,40 +50,184 @@ h1 {
 
 .tooltip {
   display: none;
-  width: 100%;
+  width: 120%;
   position: absolute;
-  top: 3em;
+  top: 3rem;
   left: 0;
   z-index: 200;
-  background: #6633ff;
+  background: #5a23ff;
   color: #fff;
-  padding: 0.8em;
-  font-size: 0.8em;
+  padding: 0.8rem;
+  font-size: 1rem;
   text-align: left; }
 
-@media screen and (max-width: 600px) {
-  .t-right {
-    text-align: center; } }
+#faq, #work {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
 
-.row-full {
+.faq-item > * {
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+  letter-spacing: 0.5px;
+  font-weight: 500; }
+
+#faq > li {
+  margin-bottom: 2rem; }
+
+.faq-item > p {
+  color: #fff;
+  border-bottom: 1px dotted white;
+  display: inline-block; }
+
+#work li:before {
+  content: "→"; }
+
+#work .faq-item p {
+  font-size: 1.3rem;
+  line-height: 2rem; }
+
+.row-full, .row-3 {
   display: block;
   display: grid;
   align-content: center;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
   margin: auto;
-  height: 100vh;
+  padding: 1rem;
   grid-template-columns: [full] 100%; }
 
-.col-full {
+.row-3 {
+  grid-template-rows: [header] 10% [gutter] 5% [content1] 25% [gutter] 5% [content2] 25%;
+  grid-template-columns: [col1] 1fr [col2] 1fr [col3] 1fr; }
+
+.col-full, .col-1-1, .col-1-2, .col-1-3, .col-2-1, .col-2-2, .col-2-3 {
   align-self: center;
-  grid-area: full;
+  grid-column: full;
+  margin: auto;
+  padding: 1rem; }
+
+.row-head {
+  align-self: center;
+  grid-row: header;
+  grid-column-start: span 3;
   margin: auto; }
 
+.row-head h2 {
+  color: #fff;
+  font-size: 1.5rem; }
+
+.col-1-1 {
+  grid-row: content1;
+  grid-column: col1;
+  margin: 0.5rem;
+  min-height: 100%;
+  z-index: 99; }
+
+.col-1-2 {
+  grid-row: content1;
+  grid-column: col2;
+  margin: 0.5rem;
+  min-height: 100%;
+  z-index: 99; }
+
+.col-1-3 {
+  grid-row: content1;
+  grid-column: col3;
+  margin: 0.5rem;
+  min-height: 100%;
+  z-index: 99; }
+
+.col-2-1 {
+  grid-row: content2;
+  grid-column: col1;
+  margin: 0.5rem;
+  min-height: 100%;
+  z-index: 98; }
+
+.col-2-2 {
+  grid-row: content2;
+  grid-column: col2;
+  margin: 0.5rem;
+  min-height: 100%;
+  z-index: 98; }
+
+.col-2-3 {
+  grid-row: content2;
+  grid-column: col3;
+  margin: 0.5rem;
+  min-height: 100%;
+  z-index: 98; }
+
 @media screen and (max-width: 600px) {
-  .row-full {
-    margin: 40vh auto;
-    height: auto; } }
+  .row-full, .row-3 {
+    margin: 0;
+    display: flex;
+    flex-direction: column; }
+  .row-3 {
+    height: auto;
+    margin: 5rem auto;
+    max-width: 260px; }
+  .row-head {
+    margin: 2em auto; } }
+
+.p-item {
+  position: relative;
+  padding: 1.5rem 1.8rem;
+  border-radius: .5rem;
+  text-align: left;
+  background: #2c829a;
+  color: #fff;
+  box-shadow: 0rem 0.5rem 3rem #000; }
+
+.p-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  z-index: 100;
+  background: #5a23ff;
+  box-shadow: 0rem 1rem 4rem #000; }
+
+.p-item h3 {
+  padding-top: .3rem;
+  margin-bottom: .8rem;
+  font-size: 0.9rem;
+  font-weight: 500; }
+
+.p-links a {
+  display: inline-block;
+  margin: 0.5rem 0.5rem; }
+
+.tags {
+  padding: 0;
+  display: inline-block; }
+
+.tags li {
+  list-style: none;
+  display: inline-block;
+  background: rgba(24, 32, 231, 0.25);
+  border-radius: 1rem;
+  font-size: .7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: .5em 0.8rem;
+  margin: 0.2em 0; }
+
+.accessible {
+  text-align: center;
+  margin: 10px auto;
+  width: 100vw;
+  background: #fff;
+  color: #000;
+  position: relative;
+  top: -100px; }
+
+.accessible:focus {
+  margin: 10px auto;
+  width: 100vw;
+  background: #fff;
+  color: #000;
+  position: static;
+  top: 0; }
 
 .is-relative {
   position: relative; }

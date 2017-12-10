@@ -1,15 +1,16 @@
 // Vars
 
-$primary: hsl(255, 100%, 60%)
-$bg-color: #000
+$primary: #5a23ff
+$primary-dull: #3a17a3
+$bg-color: rgba(0, 0, 0, 0.9)
 
 // Root
 
 html
-	font-size: 14px
+	font-size: 12px
 	font-family: 'Roboto', Arial, Helvetica, sans-serif
 	font-weight: 300
-	color: $primary
+	color: #8b64ff
 
 // Body
 
@@ -17,6 +18,9 @@ body
 	width: 100%
 	overflow-x: hidden
 	background: $bg-color
+	background: linear-gradient(to bottom, #000000 0%, #000000 30%, #2f2730 100%)
+	max-width: 768px
+	margin: auto
 
 // Typography
 
@@ -27,8 +31,21 @@ h1, h2, h3, h4, h5, h6
 p
 	margin: 0
 
+a
+	color: #fff
+	font-weight: 500
+	text-decoration: underline dashed
+
 h1
-	font-size: 2.8em
+	font-size: 2.8rem
+
+.t-med
+	font-size: 1.5em
+
+.t-large
+	font-size: 3rem
+	margin-bottom: 3rem
+	font-weight: 500
 
 .t-right
 	text-align: right
@@ -44,20 +61,44 @@ h1
 
 .tooltip
 	display: none
-	width: 100%
+	width: 120%
 	position: absolute
-	top: 3em
+	top: 3rem
 	left: 0
 	z-index: 200
 	background: $primary
 	color: #fff
-	padding: 0.8em
-	font-size: 0.8em
+	padding: 0.8rem
+	font-size: 1rem
 	text-align: left
 
-@media screen and (max-width: 600px)
-	.t-right
-		text-align: center
+// FAQ UL
+
+#faq, #work
+	list-style: none
+	margin: 0
+	padding: 0
+
+.faq-item > *
+	font-size: 1.5rem
+	line-height: 2.2rem
+	letter-spacing: 0.5px
+	font-weight: 500
+
+#faq > li
+	margin-bottom: 2rem
+
+.faq-item > p
+	color: #fff
+	border-bottom: 1px dotted white
+	display: inline-block
+
+#work li:before
+	content: "→"
+
+#work .faq-item p
+	font-size: 1.3rem
+	line-height: 2rem
 
 // Grid
 
@@ -67,21 +108,118 @@ h1
 	align-content: center
 	align-items: center
 	justify-content: center
+	min-height: 100vh
 	margin: auto
-	height: 100vh
+	padding: 1rem
 	grid-template-columns: [full] 100%
+
+.row-3
+	@extend .row-full
+	grid-template-rows: [header] 10% [gutter] 5% [content1] 25% [gutter] 5% [content2] 25%
+	grid-template-columns: [col1] 1fr [col2] 1fr [col3] 1fr
 
 .col-full
 	align-self: center
-	grid-area: full
+	grid-column: full
 	margin: auto
+	padding: 1rem
+
+.row-head
+	align-self: center
+	grid-row: header
+	grid-column-start: span 3
+	margin: auto
+	
+.row-head h2
+	color: #fff
+	font-size: 1.5rem
+
+@for $rown from 1 through 2
+	@for $coln from 1 through 3
+		.col-#{$rown}-#{$coln}
+			@extend .col-full
+			grid-row: content#{$rown}
+			grid-column: col#{$coln}
+			margin: 0.5rem
+			min-height: 100%
+			z-index: #{100 - $rown}
 
 @media screen and (max-width: 600px)
 	.row-full
-		margin: 40vh auto
+		margin: 0
+		display: flex
+		flex-direction: column
+	.row-3
 		height: auto
+		margin: 5rem auto
+		max-width: 260px
+	.row-head
+		margin: 2em auto
 
-// Micro-class
+// Portfolio Item
+
+.p-item
+	position: relative
+	padding: 1.5rem 1.8rem
+	border-radius: .5rem
+	text-align: left
+	background: #2c829a
+	color: #fff
+	box-shadow: 0rem 0.5rem 3rem #000
+
+.p-item:hover
+	transform: translateY(-5px) scale(1.02)
+	z-index: 100
+	background: $primary
+	box-shadow: 0rem 1rem 4rem #000
+
+.p-item h3
+	padding-top: .3rem
+	margin-bottom: .8rem
+	font-size: 0.9rem
+	font-weight: 500
+
+.p-links a
+	display: inline-block
+	margin: 0.5rem 0.5rem
+
+// Tags
+
+.tags
+	padding: 0
+	display: inline-block
+
+.tags li
+	list-style: none
+	display: inline-block
+	background: rgba(24, 32, 231, .25)
+	border-radius: 1rem
+	font-size: .7rem
+	font-weight: 500
+	text-transform: uppercase
+	padding: .5em 0.8rem
+	margin: 0.2em 0
+
+// Accessibility
+
+.accessible
+	text-align: center
+	margin: 10px auto
+	width: 100vw
+	background: #fff
+	color: #000
+	position: relative
+	top: -100px
+
+.accessible:focus
+	margin: 10px auto
+	width: 100vw
+	background: #fff
+	color: #000
+	position: static
+	top: 0
+
+// Micro-classes
 
 .is-relative
 	position: relative
