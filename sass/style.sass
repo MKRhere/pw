@@ -22,13 +22,19 @@ body
 
 h1, h2, h3, h4, h5, h6
 	font-weight: 300
+	margin: 0
+
+p
+	margin: 0
 
 h1
 	font-size: 2.8em
-	line-height: 0em
 
 .t-right
 	text-align: right
+
+.t-center
+	text-align: center
 
 .t-white
 	color: #fff
@@ -49,8 +55,9 @@ h1
 	font-size: 0.8em
 	text-align: left
 
-.is-relative
-	position: relative
+@media screen and (max-width: 600px)
+	.t-right
+		text-align: center
 
 // Grid
 
@@ -64,19 +71,17 @@ h1
 	height: 100vh
 	grid-template-columns: [full] 100%
 
-
-.row-full
-	display: block
-	display: grid
-	align-content: center
-	align-items: center
-	justify-content: center
-	margin: auto
-	height: 100vh
-	grid-template-columns: [full] 100%
-
-
 .col-full
 	align-self: center
 	grid-area: full
 	margin: auto
+
+@media screen and (max-width: 600px)
+	.row-full
+		margin: 40vh auto
+		height: auto
+
+// Micro-class
+
+.is-relative
+	position: relative
