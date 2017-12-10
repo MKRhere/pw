@@ -172,18 +172,6 @@ h1 {
   .row-head {
     margin: 2em auto; } }
 
-@media screen and (max-height: 700px) {
-  .row-full, .row-3 {
-    margin: 0;
-    display: flex;
-    flex-direction: column; }
-  .row-3 {
-    height: auto;
-    margin: 5rem auto;
-    max-width: 260px; }
-  .row-head {
-    margin: 2em auto; } }
-
 .p-item {
   position: relative;
   height: 22vh;
@@ -211,10 +199,6 @@ h1 {
   margin: 0.5rem 0.5rem; }
 
 @media screen and (max-width: 768px) {
-  .p-item {
-    height: auto; } }
-
-@media screen and (max-height: 700px) {
   .p-item {
     height: auto; } }
 
