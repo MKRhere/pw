@@ -217,6 +217,15 @@
 		document.onscroll = revealEmail
 	</script>
 	<script src="js/bundle.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+	<script>
+		var socket = io('https://breeze.thefeathers.in');
+		var visitorData = {
+			referringSite: document.referrer,
+			page: location.pathname
+		}
+		socket.emit('visitor-data', visitorData);
+	</script>
 </body>
 
 </html>
