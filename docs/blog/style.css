@@ -1,0 +1,91 @@
+@charset "UTF-8";
+html {
+  font-size: 16px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  color: #eee; }
+
+body {
+  min-height: 100vh;
+  letter-spacing: 0.2px;
+  width: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(to bottom, #30272D 0%, #111 100%);
+  max-width: 768px;
+  margin: auto; }
+
+code {
+	font-family: 'Roboto Mono', Monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  margin: 2rem 0; }
+
+p {
+  margin: 2rem 0;
+  line-height: 1.3em; }
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.link {
+  font-weight: 400;
+  padding-bottom: 3px;
+  border-bottom: 1px dashed #fff;
+  line-height: 1.5em;
+}
+
+.link:before {
+	content: "➡️ "
+}
+
+h1 {
+  font-size: 2.8rem; }
+
+.blog-card {
+  padding: 0 1rem;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+}
+
+.blog-content {
+	margin: 3rem;
+}
+
+.t-med {
+  font-size: 1.5em; }
+
+.t-large {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  font-weight: 500; }
+
+.t-right {
+  text-align: right; }
+
+.t-center {
+  text-align: center; }
+
+.t-white {
+  color: #fff; }
+
+.t-uline {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
+
+.tags {
+  padding: 0;
+  margin: 0;
+  display: inline-block; }
+
+.tags li {
+  list-style: none;
+  display: inline-block;
+  background: rgba(24, 32, 231, 0.25);
+  border-radius: 1rem;
+  font-size: .7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: .5em 0.8rem;
+  margin: 0.2em 0; }

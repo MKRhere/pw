@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8; X-Content-Type-Options=nosniff">
+	<title>MKRhere/Blog</title>
+	<meta name="keywords" content="muthu kumar, mkrhere, personal blog">
+	<meta name="description" content="Thoughts and words.">
+	<meta name="subject" content="Personal blog">
+	<meta name="copyright" content="Muthu Kumar">
+	<meta name="language" content="EN">
+	<meta name="robots" content="index,follow">
+	<meta name="revised" content="Friday, May 25th, 2017">
+	<meta name="author" content="Muthu Kumar, muthukumar(AT)thefeathers.in">
+	<meta name="url" content="https://mkr.pw">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-dns-prefetch-control" content="on">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" type="text/css" charset="utf-8">
+	<link rel="stylesheet" href="style.css" type="text/css" charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:500,500i" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="blog-content">
+		<h1><code>MKRhere/blog</code></h1>
+
+		<div class="blog-card">
+			<a href="thoothukudi-and-democracy"><h2 class="link no-margin">Thoothukudi and democracy</h2></a>
+			<ul class="tags">
+				<li>Politics</li>
+				<li>Democracy</li>
+				<li>Thoothukudi Massacre</li>
+				<li>Democracy</li>
+				<li>Sterilite Copper</li>
+			</ul>
+
+			<p><strong><code>Muthu Kumar, 25th May, 2018.</code></strong></p>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+	<script>
+		var socket = io('https://breeze.thefeathers.in');
+		var visitorData = {
+			referringSite: document.referrer,
+			page: location.pathname
+		}
+		socket.emit('visitor-data', visitorData);
+	</script>
+
+</body>
