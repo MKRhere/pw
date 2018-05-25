@@ -77,7 +77,7 @@
 		var socket = io('https://breeze.thefeathers.in');
 		var visitorData = {
 			referringSite: document.referrer,
-			page: location.pathname
+			page: document.URL
 		}
 		socket.emit('visitor-data', visitorData);
 	</script>
